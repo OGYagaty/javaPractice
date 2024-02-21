@@ -1,7 +1,6 @@
 package practicajavafundamentals;
 import java.util.Scanner;
 public class solicData {
-
     public static String perdirDatos(boolean estado){
         Scanner in = new Scanner(System.in);
         products productOne = new products();
