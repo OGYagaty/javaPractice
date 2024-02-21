@@ -4,6 +4,8 @@
  */
 package practicajavafundamentals;
 
+import java.util.Scanner;
+
 /**
  *
  * @author OG
@@ -13,7 +15,9 @@ public class products {
     private int ID;    // ID del producto
     private String nameProduct;  //  nombre del producto
     private double price;  // precio del producto
-    private int stockNumber;  // numero de exitencias 
+    private int stockNumber;  // numero de exitencias
+
+    private boolean productStatus = true;
     
     // contructor vacio
       public products() {
@@ -68,14 +72,28 @@ public class products {
     public void setStockNumber(int stockNumber) {
         this.stockNumber = stockNumber;
     }
-     
-    
+
+    public boolean isProductStatus() {
+        return productStatus;
+    }
+
+    public void setProductStatus(boolean productStatus) {
+        this.productStatus = productStatus;
+    }
+
+    public Double stockValue(){
+          return (getPrice()*stockNumber);
+    }
+
     @Override
     public String toString(){
-      return    "ID: "+ ID + "\n"
-              + "Nombre del producto: "+ nameProduct + "\n"
+      String estado =  productStatus == true ? "Activo" :"Descatalogado";
+      return    "ID: "+ ID + " \n"
+              + "Nombre del producto: "+ nameProduct + " \n"
               + "Precio: "+ price + "\n"
-              + "Numero en existencias: "+ stockNumber+ "\n";
+              + "Numero en existencias: "+ stockNumber+ " \n"
+              + "Valor del Stock: "+ stockValue() + " \n"
+              + "Estado del prodcuto: "+estado+ " \n";
    }
            
     

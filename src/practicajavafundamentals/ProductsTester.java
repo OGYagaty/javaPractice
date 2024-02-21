@@ -1,12 +1,20 @@
 package practicajavafundamentals;
 
-import practicajavafundamentals.products;
+import java.util.Scanner;
 
-public class PracticaJavaFundamentals {
+public class ProductsTester {
+
 
     public static void main(String[] args) {
-        
-       
+
+        String Datos = solicData.perdirDatos(true);
+        System.out.println(Datos);
+
+        String Datos2 = solicData.perdirDatos(false);
+        System.out.println(Datos2);
+
+        /*
+
         products productOne = new products();
         productOne.setID(1);
         productOne.setNameProduct("Televisor");
@@ -37,7 +45,9 @@ public class PracticaJavaFundamentals {
 
         products productSix = new products(6, "Horno", 550_000.00, 9);
         System.out.println(productSix.toString());
-
+*/
     }
+
+
 
 }
