@@ -95,8 +95,5 @@ public class products {
               + "Valor del Stock: "+ stockValue() + " \n"
               + "Estado del prodcuto: "+estado+ " \n";
    }
-           
-    
-     
-     
+
 }

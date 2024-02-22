@@ -4,14 +4,16 @@ import java.util.Scanner;
 
 public class ProductsTester {
 
-
     public static void main(String[] args) {
+        solicData dt = new solicData();
+        dt.perdirDatos();
 
-        String Datos = solicData.perdirDatos(true);
-        System.out.println(Datos);
 
-        String Datos2 = solicData.perdirDatos(false);
-        System.out.println(Datos2);
+//        String Datos = solicData.perdirDatos(true);
+//        System.out.println(Datos);
+//
+//        String Datos2 = solicData.perdirDatos(false);
+//        System.out.println(Datos2);
 
         /*
 
@@ -47,7 +49,5 @@ public class ProductsTester {
         System.out.println(productSix.toString());
 */
     }
-
-
 
 }
