@@ -88,8 +88,8 @@ public class products {
     @Override
     public String toString(){
       String estado =  productStatus == true ? "Activo" :"Descatalogado";
-      return    "ID: "+ ID + " \n"
-              + "Nombre del producto: "+ nameProduct + " \n"
+      return   // "ID: "+ ID + " \n"+
+               "Nombre del producto: "+ nameProduct + " \n"
               + "Precio: "+ price + "\n"
               + "Numero en existencias: "+ stockNumber+ " \n"
               + "Valor del Stock: "+ stockValue() + " \n"
