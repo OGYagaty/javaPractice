@@ -1,23 +1,26 @@
-package practicajavafundamentals;
+package practicajavafundamentals.front;
 
 import java.util.Scanner;
 
 public class ProductsTester {
 
     public static void main(String[] args) {
+        callProducts call = new callProducts();
+        call.callProd();
 
-        products[] productos = new products[] {
-                new products(1, "DVD", 200.0, 5),
-                new products(2, "CD", 100.0, 10)
-        };
- // products[] productos = new products[]{};
 
-        solicData dt = new solicData();
-        dt.displayInventory(productos);
-//        dt.deductInventory(productos);
+//        products[] productos = new products[] {
+//                new products(1, "DVD", 200.0, 5),
+//                new products(2, "CD", 100.0, 10)
+//        };
+// // products[] productos = new products[]{};
+//
+//        solicData dt = new solicData();
 //        dt.displayInventory(productos);
-        dt.discontinueProduct(productos);
-        dt.displayInventory(productos);
+////        dt.deductInventory(productos);
+////        dt.displayInventory(productos);
+//        dt.discontinueProduct(productos);
+//        dt.displayInventory(productos);
 
 
 //        String Datos = solicData.perdirDatos(true);

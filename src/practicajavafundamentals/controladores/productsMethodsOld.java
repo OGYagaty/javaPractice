@@ -1,8 +1,9 @@
-package practicajavafundamentals;
+package practicajavafundamentals.controladores;
+
+import practicajavafundamentals.data.products;
 
 import java.util.Scanner;
-
-public class solicData {
+public class productsMethodsOld {
     private int maxSize;
     private String tempName = "";
     private double tempPrice;
@@ -10,6 +11,7 @@ public class solicData {
     private boolean statusProduct;
     private int num = 1;
 
+    //agrega inventario en general
     public void addToInventory(products[] product) {
         do {
             try {
@@ -40,48 +42,9 @@ public class solicData {
 
     }
 
-//    public  void perdirDatos(){
-//
-//
-//        do {
-//        try {
-//            System.out.println("Cuantos productos vas a insertar");
-//            maxSize = Integer.parseInt(scan());
-//            products[] product = new products[maxSize];
-//
-//            for (int i = 0; i < maxSize; i++) {
-//                product[i] = new products();
-//                // Asignacion de variables
-//                System.out.println("Producto N° " + (i+1));
-//                product[i].setID(i + 1);
-//                System.out.print("Ingrese nombre del producto: ");
-//                product[i].setNameProduct(tempName=scan());
-//                System.out.print("Ingrese precio del producto: ");
-//                product[i].setPrice(tempPrice=Double.parseDouble(scan()));
-//                System.out.print("Ingrese numero de stock del producto: ");
-//                product[i].setStockNumber(tempQty=Integer.parseInt(scan()));
-//                System.out.print("Ingrese  Activo=true o Descatalogado=false: ");
-//                product[i].setProductStatus(statusProduct=Boolean.parseBoolean(scan()));
-//            }
-//            displayInventory(product);
-//
-//        } catch (NumberFormatException E) {
-//            System.out.println("Valor invalido intente nuevamente! Inicie el proceso");
-//            System.out.println(E);
-//            num=2;
-//        }
-//
-//        }while (num!=1);
-//
-//
-//
-//    }
 
-    public String scan() {
-        Scanner in = new Scanner(System.in);
-        String dato = in.nextLine();
-        return dato;
-    }
+
+
 
     public void displayInventory(products[] prod) {
 //UTILIZANDO FOR EACH
@@ -115,6 +78,8 @@ public class solicData {
         return maxSize;
     }
 
+
+    //no va a ser necesario se dejaran los productos creados por defecto
     public boolean StatusProd() {
         System.out.print("Estado del producto Activo=1 , Descatalogado=cualquier caracter diferente a 1 : ");
         String valor = scan();
@@ -192,6 +157,8 @@ public class solicData {
         }
     }
 
+
+    //metodo para bajar el numero del stock
     public void deductInventory(products[] prod) {
         //metodo para restar del inventario actual
         int productChoice = getProductNumber(prod);
@@ -253,6 +220,14 @@ public class solicData {
     }
 
 
+    //se pasa como metodo general
+    public String scan() {
+        Scanner in = new Scanner(System.in);
+        String dato = in.nextLine();
+        return dato;
+    }
+
+
 }
 
 
@@ -281,3 +256,41 @@ version 1 solicitar Data
         int tempQty= in.nextInt();
         productOne.setStockNumber(tempQty);
         in.nextLine();*/
+
+
+//    public  void perdirDatos(){
+//
+//
+//        do {
+//        try {
+//            System.out.println("Cuantos productos vas a insertar");
+//            maxSize = Integer.parseInt(scan());
+//            products[] product = new products[maxSize];
+//
+//            for (int i = 0; i < maxSize; i++) {
+//                product[i] = new products();
+//                // Asignacion de variables
+//                System.out.println("Producto N° " + (i+1));
+//                product[i].setID(i + 1);
+//                System.out.print("Ingrese nombre del producto: ");
+//                product[i].setNameProduct(tempName=scan());
+//                System.out.print("Ingrese precio del producto: ");
+//                product[i].setPrice(tempPrice=Double.parseDouble(scan()));
+//                System.out.print("Ingrese numero de stock del producto: ");
+//                product[i].setStockNumber(tempQty=Integer.parseInt(scan()));
+//                System.out.print("Ingrese  Activo=true o Descatalogado=false: ");
+//                product[i].setProductStatus(statusProduct=Boolean.parseBoolean(scan()));
+//            }
+//            displayInventory(product);
+//
+//        } catch (NumberFormatException E) {
+//            System.out.println("Valor invalido intente nuevamente! Inicie el proceso");
+//            System.out.println(E);
+//            num=2;
+//        }
+//
+//        }while (num!=1);
+//
+//
+//
+//    }
