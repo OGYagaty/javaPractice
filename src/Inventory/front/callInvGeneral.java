@@ -28,6 +28,7 @@ public class callInvGeneral {
                     break;
                 case 3:
                     System.out.println("descontar del stock...");
+                    cgp.deductStock(generalProd);
                     break;
                 case 4:
                     System.out.println("descontinuar producto...");

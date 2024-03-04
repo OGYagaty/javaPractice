@@ -61,7 +61,7 @@ public class controlGeneralProducts {
 
             }
         }
-    }
+     }
 
     public void addToStock(List<dGeneralProd> generalProd) {
         if (generalProd.size() == 0) {
@@ -88,4 +88,37 @@ public class controlGeneralProducts {
             }
         }
     }
+
+
+    public void deductStock(List<dGeneralProd> generalProd){
+        if (generalProd.size() == 0){
+            System.out.println("No hay productos para mostrar en el momento!");
+        }else{
+            try {
+                int chioice = gm.getNumberStock(generalProd);
+
+                for (dGeneralProd gn : generalProd) {
+                    if (gn.getID() == chioice) {
+                        System.out.println("de cuanto va a ser la deduccion del Stock?");
+                        int numberAdd = Integer.parseInt(gm.scan());
+                        if(numberAdd<=0){
+                            System.out.println("Para agregar al Stock inserte valores superiores a 0...");
+                        } else if (gn.getStockNumber() < numberAdd ){
+                            System.out.println("el numero a reducir supera la cantidad de Stock actual");
+                        }
+                        else {
+                            gn.setStockNumber(gn.getStockNumber()-numberAdd);
+                            System.out.println("Operacion Exitosa...");
+                        }
+                        break;
+                    }
+                }
+
+            }catch (NumberFormatException e){
+                System.out.println("Error al deducir el stock!");
+            }
+        }
+    }
+
+
 }
