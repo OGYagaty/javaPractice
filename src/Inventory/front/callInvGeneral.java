@@ -23,15 +23,16 @@ public class callInvGeneral {
                     cgp.displayProduct(generalProd);
                     break;
                 case 2:
-                    System.out.println("agregando stock...");
+                    //System.out.println("agregando stock...");
                     cgp.addToStock(generalProd);
                     break;
                 case 3:
-                    System.out.println("descontar del stock...");
+                    //System.out.println("descontar del stock...");
                     cgp.deductStock(generalProd);
                     break;
                 case 4:
-                    System.out.println("descontinuar producto...");
+                   // System.out.println("descontinuar producto...");
+                    cgp.discountProductGen(generalProd);
                     break;
                 case 5:
                     //System.out.println("Agregando al inventario");

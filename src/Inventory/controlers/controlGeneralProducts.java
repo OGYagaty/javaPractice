@@ -61,7 +61,7 @@ public class controlGeneralProducts {
 
             }
         }
-     }
+    }
 
     public void addToStock(List<dGeneralProd> generalProd) {
         if (generalProd.size() == 0) {
@@ -72,15 +72,14 @@ public class controlGeneralProducts {
                 for (dGeneralProd gn : generalProd) {
                     if (gn.getID() == chioice) {
                         System.out.println("que cantidad vas agregar al Stock?");
-                      int numberAdd = Integer.parseInt(gm.scan());
-                      if(numberAdd<=0){
-                          System.out.println("Para agregar al Stock inserte valores superiores a 0...");
-                      }
-                      else {
-                         gn.setStockNumber(gn.getStockNumber()+numberAdd);
-                          System.out.println("Operacion Exitosa...");
-                      }
-                      break;
+                        int numberAdd = Integer.parseInt(gm.scan());
+                        if (numberAdd <= 0) {
+                            System.out.println("Para agregar al Stock inserte valores superiores a 0...");
+                        } else {
+                            gn.setStockNumber(gn.getStockNumber() + numberAdd);
+                            System.out.println("Operacion Exitosa...");
+                        }
+                        break;
                     }
                 }
             } catch (NumberFormatException e) {
@@ -90,10 +89,10 @@ public class controlGeneralProducts {
     }
 
 
-    public void deductStock(List<dGeneralProd> generalProd){
-        if (generalProd.size() == 0){
+    public void deductStock(List<dGeneralProd> generalProd) {
+        if (generalProd.size() == 0) {
             System.out.println("No hay productos para mostrar en el momento!");
-        }else{
+        } else {
             try {
                 int chioice = gm.getNumberStock(generalProd);
 
@@ -101,23 +100,55 @@ public class controlGeneralProducts {
                     if (gn.getID() == chioice) {
                         System.out.println("de cuanto va a ser la deduccion del Stock?");
                         int numberAdd = Integer.parseInt(gm.scan());
-                        if(numberAdd<=0){
+                        if (numberAdd <= 0) {
                             System.out.println("Para agregar al Stock inserte valores superiores a 0...");
-                        } else if (gn.getStockNumber() < numberAdd ){
+                        } else if (gn.getStockNumber() < numberAdd) {
                             System.out.println("el numero a reducir supera la cantidad de Stock actual");
-                        }
-                        else {
-                            gn.setStockNumber(gn.getStockNumber()-numberAdd);
+                        } else {
+                            gn.setStockNumber(gn.getStockNumber() - numberAdd);
                             System.out.println("Operacion Exitosa...");
                         }
                         break;
                     }
                 }
 
-            }catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 System.out.println("Error al deducir el stock!");
             }
         }
+    }
+
+    public void discountProductGen(List<dGeneralProd> generalProd) {
+        try {
+            int choiceOption;
+            if (generalProd.isEmpty()) {
+                System.out.println("No hay productos que mostrar!");
+            } else {
+                choiceOption = gm.getNumberStock(generalProd);
+                for (dGeneralProd gn : generalProd) {
+                    if (gn.getID() == choiceOption) {
+                        System.out.println("Inserta 1 para cambiar el Status a Desacatalogado, de lo contrario pulsa cualquier numero...");
+                        int changeStatus = Integer.parseInt(gm.scan());
+                         if (changeStatus==1){
+                             if (gn.getStockNumber() > 0) {
+                                 System.out.println("El stock del inventario debe estar vacio!");
+                                 break;
+                             }else {
+                                 gn.setProductStatus(false);
+                                 System.out.println("Operacion Exitosa...");
+                                 break;
+                             }
+                        }
+                        else{
+                            System.out.println("Cancelando Operacion");
+                        }
+                    }
+                }
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Error cambiando e estatus del producto!...");
+        }
+
     }
 
 
