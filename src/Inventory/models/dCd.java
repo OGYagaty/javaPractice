@@ -1,23 +1,25 @@
 package Inventory.models;
 
 public class dCd extends dGeneralProd {
-    private int artista;
+    private String artista;
     private int songNumber;
-    private int discografica;
+    private String discografica;
 
+    public dCd(){
 
-    public dCd(int ID, String nameProduct, double price, int stockNumber, int artista, int songNumber, int discografica) {
+    }
+    public dCd(int ID, String nameProduct, double price, int stockNumber, String artista, int songNumber, String discografica) {
         super(ID, nameProduct, price, stockNumber);
         this.artista = artista;
         this.songNumber = songNumber;
         this.discografica = discografica;
     }
 
-    public int getArtista() {
+    public String getArtista() {
         return artista;
     }
 
-    public void setArtista(int artista) {
+    public void setArtista(String artista) {
         this.artista = artista;
     }
 
@@ -29,11 +31,11 @@ public class dCd extends dGeneralProd {
         this.songNumber = songNumber;
     }
 
-    public int getDiscografica() {
+    public String getDiscografica() {
         return discografica;
     }
 
-    public void setDiscografica(int discografica) {
+    public void setDiscografica(String discografica) {
         this.discografica = discografica;
     }
 

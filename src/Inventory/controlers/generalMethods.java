@@ -1,5 +1,7 @@
 package Inventory.controlers;
 
+import Inventory.models.dDvd;
+import Inventory.models.dCd;
 import Inventory.models.dGeneralProd;
 
 import java.util.List;
@@ -56,6 +58,26 @@ public class generalMethods {
 
     }
 
+    public int getNumberStockDvd(List<dDvd> dvdProduct) {
+        int choiceOption;
+        for (dDvd pDvd : dvdProduct) {
+            System.out.print("#: " + pDvd.getID() + " Pelicula: " + pDvd.getNameProduct());
+            System.out.print(" | ");
+        }
+        System.out.println("\n Escoja un ID del producto a modificar...");
+        return choiceOption = Integer.parseInt(scan());
 
+    }
+
+    public int getNumberStockCd(List<dCd> cdProduct) {
+        int choiceOption;
+        for (dCd pCd : cdProduct) {
+            System.out.print("#: " + pCd.getID() + " Nombre CD: " + pCd.getNameProduct());
+            System.out.print(" | ");
+        }
+        System.out.println("\n Escoja un ID del producto a modificar...");
+        return choiceOption = Integer.parseInt(scan());
+
+    }
 
 }

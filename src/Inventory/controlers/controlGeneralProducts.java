@@ -101,7 +101,7 @@ public class controlGeneralProducts {
                         System.out.println("de cuanto va a ser la deduccion del Stock?");
                         int numberAdd = Integer.parseInt(gm.scan());
                         if (numberAdd <= 0) {
-                            System.out.println("Para agregar al Stock inserte valores superiores a 0...");
+                            System.out.println("Inserte valores superiores a 0...");
                         } else if (gn.getStockNumber() < numberAdd) {
                             System.out.println("el numero a reducir supera la cantidad de Stock actual");
                         } else {
